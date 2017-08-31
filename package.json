@@ -1,0 +1,30 @@
+{
+    "name": "node-api",
+    "main": "server.js",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"cd client && npm start\"",
+        "server": "node server.js"
+    },
+    "dependencies": {
+        "axios": "^0.16.2",
+        "bluebird": "^3.5.0",
+        "body-parser": "~1.0.1",
+        "bootstrap": "^3.3.7",
+        "cookie-parser": "^1.4.3",
+        "express": "~4.0.0",
+        "fs": "0.0.1-security",
+        "lodash": "^4.17.4",
+        "path": "^0.12.7",
+        "pg": "^7.2.0",
+        "pg-promise": "^5.9.7",
+        "react-bootstrap": "^0.31.2",
+        "react-redux": "^5.0.6",
+        "react-router-dom": "^4.2.2",
+        "redux": "^3.7.2",
+        "redux-thunk": "^2.2.0"
+    },
+    "devDependencies": {
+        "concurrently": "^3.5.0",
+        "nodemon": "^1.11.0"
+    }
+}
