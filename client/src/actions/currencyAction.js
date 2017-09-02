@@ -1,5 +1,4 @@
 import axios from 'axios';
-import _ from 'lodash';
 const fx = require("money");
 
 export const GET_CURRENCY ="GET_CURRENCY";
@@ -11,7 +10,7 @@ const ROOT_URL = "http://api.fixer.io";
 /* get currency */
 export function exchangeCurrency(data){
 	return dispatch=>{
-		return axios.get(`${ROOT_URL}/latest?base=SEK`)
+		return axios.get(`${ROOT_URL}/${data.date}?base=SEK`)
 			.then((response)=>{
 				const converted = convert(response.data,data.amount,data.currency);
 				console.log(converted);

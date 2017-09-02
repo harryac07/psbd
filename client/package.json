@@ -5,8 +5,10 @@
   "proxy": "http://localhost:3001/",
   "dependencies": {
     "bootstrap": "^3.3.7",
+    "moment": "^2.18.1",
     "money": "^0.2.0",
     "react": "^15.6.1",
+    "react-datepicker": "^0.53.0",
     "react-dom": "^15.6.1"
   },
   "devDependencies": {

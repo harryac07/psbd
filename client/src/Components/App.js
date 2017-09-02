@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import {exchangeCurrency} from '../actions/currencyAction';
-import _ from 'lodash';
 
 import ExchangeForm from '../parts/ExchangeForm';
-import Nav from '../parts/Nav';
+// import Nav from '../parts/Nav';
 
 class App extends Component {
     constructor(props){
@@ -34,9 +33,8 @@ class App extends Component {
         const {amount,base,currency,convertedRate} = this.state.formdata;
 
         return (
-            <div className="App container">
-                <Nav />
-                <h2 className="text-center">Currency Conversion</h2>
+            <div className="App">
+                <h2 className="text-center">Daily Currency Conversion</h2>
                 <div className="jumbotron">
                     <div className="text-center">
                         <p>{base ? `${amount} ${base} equals`:null}</p>

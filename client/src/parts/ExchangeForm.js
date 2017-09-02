@@ -1,4 +1,7 @@
 import React,{Component} from 'react';
+import DatePicker from 'react-datepicker';
+import moment from 'moment';
+import 'react-datepicker/dist/react-datepicker.css';
 
 class ExchangeForm extends Component{
 	constructor(props){
@@ -6,15 +9,20 @@ class ExchangeForm extends Component{
         this.state={
             base : '',
             amount: 0,
-            currency :''
+            currency :'',
+            startDate:moment()
         }
 	}
 	handleSubmit=(e)=>{
 		e.preventDefault();
 		const data={
 			amount : this.refs.amount.value,
-			currency : this.refs.currency.value
+			currency : this.refs.currency.value,
+			date : this.state.startDate 
+						? this.state.startDate.format('YYYY-MM-DD') 
+						: moment().format('YYYY-MM-DD')
 		};
+		console.log('date',data.date);
 		this.props.submit(data);
 		this.refs.amount.value="";
 		this.refs.currency.value="";
@@ -24,9 +32,20 @@ class ExchangeForm extends Component{
             [e.target.name]: e.target.value
         });
     }
+    handleDateChange=(date)=>{
+    	this.setState({startDate:date})
+    }
     render(){
 		return(
 	      <form className="form-vertical" onSubmit={this.handleSubmit}>
+	            <div className="form-group">
+	                <label  htmlFor="date">Select Date:</label>
+					<DatePicker
+					    selected={this.state.startDate}
+					    className="form-control"
+					    todayButton={"Get Today's Date"}
+					    onChange={this.handleDateChange}/>
+	            </div>
 	            <div className="form-group">
 	                <label  htmlFor="name">Amount:</label>
 	                <input type="number" className="form-control" name="amount" 

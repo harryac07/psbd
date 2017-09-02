@@ -1,5 +1,113 @@
 
+/* common */
+body{
+	background-color: #ccc !important;
+	box-sizing: border-box;
+}
+.container { 
+     margin: 0 auto !important;
+     width: 100% !important;
+}
 .jumbotron{
 	height: 80vh !important;
 	background-color: transparent !important;
+}
+nav{
+	position: fixed;
+}
+li a,div.navbar-header>a{
+	padding-right: 15px !important;
+	padding-left: 15px !important;
+	color:#C0392B !important;
+}
+li:hover,a{
+	background-color: #ccc;
+}
+button{
+	border-radius: 0 !important;
+}
+input{
+	height: 40px !important;
+	border-radius: 0 !important;
+}
+.error{
+	margin: 10px auto;
+	font-size: 18px;
+} /* common styling ends */
+
+/* ################################################################################ */
+
+/* Home or conversion page */
+.date-picker{
+	width: 100% !important;
+}
+
+/* ################################################################################ */
+/* Login  Register*/
+div.login,div.register{
+	width: 40%;
+	margin:  0 auto;
+	background-color: #fff;
+	padding: 20px;
+	position: relative;
+	top: 15vh !important;
+	animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+div.register{
+	position: relative;
+	top: 5vh !important;
+}
+@keyframes fadein {
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
+.login>div:nth-child(3),.login>div:nth-child(1),.register>div:nth-child(3),.register>div:nth-child(1){
+	text-align: center;
+}
+.login-form button,.register-form button,{
+	width: 100% !important;
+	padding: 10px;
+}
+
+/* react-datepicker */
+.react-datepicker {
+  font-size: 1.5rem !important;
+}
+
+.react-datepicker__current-month {
+  font-size: 1.7rem !important;
+}
+
+.react-datepicker__header {
+  padding-top: 8px !important;
+}
+
+.react-datepicker__navigation {
+  top: 15px !important;
+}
+
+.react-datepicker__day-name, .react-datepicker__day {
+  margin: 0.8rem !important;
+}
+/* react datepicker ends */
+a.logout{
+	color: #C0392B !important;
+}
+
+/* ################################################################################ */
+
+/*media*/
+@media (max-width: 768px) {
+	div.login,div.register{
+		width: 100%;
+		position: relative;
+		top: 0px !important;
+	}
 }
